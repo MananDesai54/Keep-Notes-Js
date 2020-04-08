@@ -1,0 +1,160 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border:none;
+    outline: none;
+}
+body {
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+.todo h1 {
+    color:white;
+    text-align: center;
+    margin: 50px 0;
+    font-size: 3em;
+}
+.filter {
+    display: flex;
+    width: 40vw;
+}
+.add {
+    position: relative;
+    flex: 1 0 0;
+}
+.add input {
+    padding: 15px;
+    width: 100%;
+    margin-right: 10px;
+}
+.plus {
+    position: absolute;
+    right:10px;
+    top:15px;
+    transform: translateY(-10px);
+    color:white;
+    background: #ff9100;
+    font-weight: 900;
+    padding : 0px 5px;
+    border-radius: 5px;
+    font-size: 30px;
+    cursor: pointer;
+}
+.showoption {
+    margin-left: 20px;
+    position: relative;
+}
+.showoption select {
+    width:150px;
+    padding: 15px 30px 15px 0;
+    color: #ff9100;
+    -moz-appearance: button;
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+.background {
+    content: '';
+    position: absolute;
+    background: #ff9100;
+    width: 2em;
+    height: 100%;
+    right: 0;
+    top: 0;
+    pointer-events: none;
+}
+.arrow {
+    pointer-events: none;
+    z-index: 2;
+    content: '';
+    position: absolute;
+    /* width: 1em;
+    height: 1em; */
+    top:45%;
+    right: 0.5em;
+    background: white;
+    border:0.5em solid;
+    border-top-color: white;
+    border-left-color: #ff9100;
+    border-right-color: #ff9100;
+    border-bottom-color: #ff9100;
+}
+.tasks {
+    margin-top: 30px;
+}
+.notes {
+    position: relative;
+    margin: 10px 0px;
+}
+.note {
+    background: white;
+    padding: 10px;
+}
+i {
+    pointer-events: none;
+}
+.delete {
+    position: absolute;
+    right:0;
+    height: 100%;
+    background: #ff9100;
+    top:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 40px;
+    cursor: pointer;
+}
+.done {
+    cursor: pointer;
+    position: absolute;
+    right:40px;
+    height: 100%;
+    background: rgb(17, 185, 121);
+    top:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 40px;
+
+}
+.task-done {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+.removed {
+    animation: animate 2s ease forwards;
+}
+@keyframes animate {
+    0% {
+        transform: rotate(0deg) translateY(10px);
+        opacity: 0.4;
+    }50% {
+        opacity: 0.4;
+    }
+    100% {
+        transform-origin: 0 0;
+        transform: rotate(12deg) translateY(100px);
+        opacity: 0;
+        display: none;
+    }
+}
+.error {
+    border:1px solid red;
+    border-radius: 5px;
+    background: rgba(255, 0, 0, 0.1);
+    color: red;
+    text-align: center;
+    padding: 10px;
+    transition:  0.5s ease-in-out;
+}
+.none {
+    display: none;
+}
